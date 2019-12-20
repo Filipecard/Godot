@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Busta Rhymes Feat Eminem - Ill Hurt You AMV (online-audio-converter.com).wav-496208bed847c5c7ccc062f08a6cf5f2.sample"
+
+[deps]
+
+source_file="res://sounds/Busta Rhymes Feat Eminem - Ill Hurt You AMV (online-audio-converter.com).wav"
+dest_files=[ "res://.import/Busta Rhymes Feat Eminem - Ill Hurt You AMV (online-audio-converter.com).wav-496208bed847c5c7ccc062f08a6cf5f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
