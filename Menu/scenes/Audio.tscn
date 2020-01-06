@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sounds/Busta Rhymes Feat Eminem - Ill Hurt You AMV (online-audio-converter.com).wav" type="AudioStream" id=1]
+[ext_resource path="res://scripts/Audio.gd" type="Script" id=2]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "volume"
+script = ExtResource( 2 )

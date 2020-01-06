@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/fire_ball/oie_transparent(1).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/fire_ball/oie_transparent(2).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/fire_ball/oie_transparent(3).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/fire_ball/oie_transparent(4).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/fire_ball/oie_transparent(5).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/fire_ball/oie_transparent.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/fire_ball/light.png" type="Texture" id=7]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+const SPEED = 250
+var velocity = Vector2()
+var direction = 1
+
+func _ready():
+	pass 
+
+func set_fireball_drection(dir):
+	direction = dir
+	if dir == -1:
+		$AnimatedSprite.flip_h = true
+	
+
+func _physics_process(delta):
+	velocity.x = SPEED * delta * direction
+	translate(velocity)
+	$AnimatedSprite.play(\"default\")
+	
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+func _on_fire_ball_body_entered(body):
+	if body.get_name() == \"esqueleto\":
+		body.dead()
+	queue_free()
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.648, 17.2623 )
+
+[node name="fire_ball" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+script = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 14.44, -0.902504 )
+shape = SubResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 5.1192, 3.41281 )
+scale = Vector2( 5.77793, 3.95777 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 25.1111, 2.33591 )
+scale = Vector2( 1.72022, 1.72022 )
+texture = ExtResource( 7 )
+[connection signal="body_entered" from="." to="." method="_on_fire_ball_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

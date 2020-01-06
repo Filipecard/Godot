@@ -19,6 +19,12 @@ config/name="Menu"
 run/main_scene="res://scenes/Inicial.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Audio="*res://scenes/Audio.tscn"
+Inicial="*res://scenes/Inicial.tscn"
+Options="*res://scenes/Options.tscn"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://script/personagem.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 505.913, 33.0505 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.678, 32.4113 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "motion"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 507.344, 157.787 ), Vector2( -532.083, 145.111 ), Vector2( 1565.79, 170.463 ), Vector2( 1565.79, 170.463 ), Vector2( 513.683, 170.463 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("background2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1527.78, 165.867 ), Vector2( 539.058, 165.867 ), Vector2( -525.721, 159.529 ), Vector2( 1565.81, 165.867 ), Vector2( 1546.8, 178.543 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("background3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2556.17, 159.435 ), Vector2( 1567.45, 184.787 ), Vector2( 521.685, 159.435 ), Vector2( -524.08, 165.773 ) ]
+}
+
+[node name="world" type="Node"]
+
+[node name="chao" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 458.067, 572.584 )
+
+[node name="shape" type="CollisionShape2D" parent="chao"]
+position = Vector2( 50, 0 )
+shape = SubResource( 1 )
+
+[node name="sprite" type="Sprite" parent="chao"]
+position = Vector2( 51.5698, 0 )
+scale = Vector2( 15.6945, 1 )
+texture = ExtResource( 1 )
+
+[node name="personagem" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 87.1362, 505.866 )
+script = ExtResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="personagem"]
+shape = SubResource( 2 )
+
+[node name="sprite" type="Sprite" parent="personagem"]
+texture = ExtResource( 1 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="background" type="Sprite" parent="Node"]
+position = Vector2( 518.58, 170.463 )
+scale = Vector2( 16.2573, 13.842 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="background2" type="Sprite" parent="Node"]
+position = Vector2( 1546.89, 178.477 )
+scale = Vector2( 16.6125, 14.395 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="background3" type="Sprite" parent="Node"]
+position = Vector2( -519.213, 165.744 )
+scale = Vector2( 16.428, 14.2389 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="Node"]
+autoplay = "motion"
+anims/motion = SubResource( 3 )

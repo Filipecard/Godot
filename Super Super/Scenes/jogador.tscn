@@ -1,0 +1,159 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://Scripts/Personagem.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Personagem/andando/0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Personagem/andando/2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Personagem/andando/1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Personagem/andando/3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Personagem/andando/4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Personagem/andando/5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(1).png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(2).png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(3).png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(4).png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(5).png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Personagem/morrendo/ezgif.com-crop(6).png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Personagem/voando/1.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Personagem/voando/2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Personagem/voando/3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Personagem/voando/4.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Personagem/voando/5.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Personagem/voando/6.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Personagem/caindo/0.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Personagem/atirando/2.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Personagem/nadando/idle.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Personagem/nadando/01.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Personagem/nadando/04.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Personagem/nadando/02.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Personagem/nadando/03.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Personagem/atirando/02.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Personagem/caindo/1.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Personagem/parado/ezgif.com-crop(1).png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/1.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/2.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/3.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/4.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/5.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/6.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Personagem/morrendo_agua/7.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Personagem/salto/0.png" type="Texture" id=38]
+[ext_resource path="res://Texturas/86de5f99b3098a4ae2f0ac01bf2e8f35--game-art-video-game.jpg" type="Texture" id=39]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "andando",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "morrendo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "voando",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "caindo",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "atirando_a",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "nadando_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "nadando",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "atirando_v",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "caindo2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "parado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
+"loop": false,
+"name": "morrendo_a",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": true,
+"name": "pulando",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.5003, 18.164 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.1412, 19.0835 )
+
+[node name="jogador" type="KinematicBody2D"]
+position = Vector2( -262.292, 126.457 )
+scale = Vector2( 1.7, 1.7 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -1.7647 )
+frames = SubResource( 1 )
+animation = "parado"
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+current = true
+limit_left = -490
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7.62939e-06, 0.658373 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 25.7664, -2.95567 )
+
+[node name="tempo_fogo" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="colisao" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="colisao"]
+position = Vector2( 0.147278, 0.44178 )
+shape = SubResource( 3 )
+
+[node name="tempo_morto" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 396.554, 297.416 )
+scale = Vector2( 3.38299, 3.28191 )
+texture = ExtResource( 39 )
+[connection signal="timeout" from="tempo_fogo" to="." method="_on_tempo_fogo_timeout"]
+[connection signal="body_entered" from="colisao" to="." method="_on_colisao_body_entered"]
+[connection signal="timeout" from="tempo_morto" to="." method="_on_morto_timeout"]
