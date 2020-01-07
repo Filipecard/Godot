@@ -1,0 +1,132 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/game.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://fontes/SHERWOOD.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/buttons/down.png" type="Texture" id=4]
+[ext_resource path="res://sprites/buttons/right.png" type="Texture" id=5]
+[ext_resource path="res://sprites/buttons/left.png" type="Texture" id=6]
+[ext_resource path="res://sprites/buttons/up.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 23
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 23
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="game" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+modulate = Color( 0.329412, 0.32549, 0.423529, 0.882353 )
+position = Vector2( 525.651, 294.758 )
+scale = Vector2( 16.9596, 12.3085 )
+texture = ExtResource( 2 )
+
+[node name="start" type="Label" parent="."]
+pause_mode = 2
+margin_left = 407.821
+margin_top = 240.751
+margin_right = 643.821
+margin_bottom = 329.751
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+
+[node name="timer_start" type="Timer" parent="start"]
+wait_time = 2.0
+one_shot = true
+
+[node name="time" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="timer" type="Timer" parent="time"]
+wait_time = 10.0
+
+[node name="label_time" type="Label" parent="time"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="players" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="player1" type="Sprite" parent="players"]
+modulate = Color( 0, 0.180392, 1, 1 )
+position = Vector2( 284.209, 453.936 )
+scale = Vector2( 1.76916, 1.76916 )
+texture = ExtResource( 2 )
+
+[node name="t1" type="Label" parent="players"]
+margin_left = 224.082
+margin_top = 352.055
+margin_right = 264.082
+margin_bottom = 378.055
+custom_fonts/font = SubResource( 2 )
+
+[node name="winlose1" type="Label" parent="players"]
+margin_left = 247.465
+margin_top = 295.269
+margin_right = 287.465
+margin_bottom = 331.269
+custom_fonts/font = SubResource( 4 )
+
+[node name="player2" type="Sprite" parent="players"]
+modulate = Color( 0, 1, 0.133333, 1 )
+position = Vector2( 811.362, 440.29 )
+scale = Vector2( 1.73681, 1.71001 )
+texture = ExtResource( 2 )
+
+[node name="t2" type="Label" parent="players"]
+margin_left = 757.787
+margin_top = 346.279
+margin_right = 797.787
+margin_bottom = 372.279
+custom_fonts/font = SubResource( 3 )
+
+[node name="winlose2" type="Label" parent="players"]
+margin_left = 784.639
+margin_top = 293.314
+margin_right = 824.639
+margin_bottom = 329.314
+custom_fonts/font = SubResource( 5 )
+
+[node name="options" type="Node" parent="."]
+
+[node name="down" type="Sprite" parent="options"]
+visible = false
+position = Vector2( 536.216, 138.207 )
+scale = Vector2( 0.503726, 0.533287 )
+texture = ExtResource( 4 )
+
+[node name="right" type="Sprite" parent="options"]
+visible = false
+position = Vector2( 536.782, 138.668 )
+scale = Vector2( 0.500308, 0.537165 )
+texture = ExtResource( 5 )
+
+[node name="left" type="Sprite" parent="options"]
+visible = false
+position = Vector2( 537.041, 137.406 )
+scale = Vector2( 0.501444, 0.537346 )
+texture = ExtResource( 6 )
+
+[node name="up" type="Sprite" parent="options"]
+visible = false
+position = Vector2( 537.207, 137.153 )
+scale = Vector2( 0.508803, 0.537659 )
+texture = ExtResource( 7 )
+[connection signal="timeout" from="start/timer_start" to="." method="_on_timer_start_timeout"]
